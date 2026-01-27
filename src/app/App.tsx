@@ -523,11 +523,11 @@ const AlgorithmSection = () => {
 
 const TokenomicsSection = () => {
   const allocations = [
-    { label: "Community Rewards", value: "40%", color: "text-purple-400" },
-    { label: "Ecosystem Growth", value: "20%", color: "text-cyan-400" },
-    { label: "Strategic Partners", value: "15%", color: "text-blue-400" },
-    { label: "Liquidity Pool", value: "10%", color: "text-pink-400" },
-    { label: "Team & Advisors", value: "15%", color: "text-indigo-400" },
+    { label: "Staking & Rewards", value: "40%", tokens: "920M", color: "text-purple-400" },
+    { label: "Liquidity (DEX/CEX)", value: "30%", tokens: "690M", color: "text-cyan-400" },
+    { label: "Project Participation", value: "15%", tokens: "345M", color: "text-blue-400" },
+    { label: "Ecosystem & Marketing", value: "10%", tokens: "230M", color: "text-pink-400" },
+    { label: "Private Sale", value: "5%", tokens: "115M", color: "text-indigo-400" },
   ];
   return (
     <section id="tokenomics" className="pt-16 pb-16 px-6 bg-black relative overflow-hidden">
@@ -580,7 +580,10 @@ const TokenomicsSection = () => {
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group">
                   <div className="relative bg-black/60 backdrop-blur-xl border border-white/5 p-4 rounded-[20px] w-[220px] group-hover:border-purple-500/40 transition-all duration-300 group-hover:translate-y-[-5px]">
                     <div className="flex justify-between items-start mb-2"><span className={`text-[9px] font-bold uppercase tracking-widest ${item.color}`}>{item.label}</span><div className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-purple-500 animate-pulse" /></div>
-                    <div className="text-2xl font-light text-white tracking-tighter">{item.value}</div>
+                    <div className="flex items-baseline gap-2">
+                      <div className="text-2xl font-light text-white tracking-tighter">{item.value}</div>
+                      <div className="text-[10px] text-gray-500 font-medium">{item.tokens}</div>
+                    </div>
                     <div className="mt-3 pt-3 border-t border-white/5 flex justify-between items-center opacity-40 group-hover:opacity-100 transition-opacity"><span className="text-[7px] uppercase tracking-widest font-bold">Allocation 0{i + 1}</span><ArrowRight size={8} className="text-purple-400" /></div>
                   </div>
                 </motion.div>
@@ -591,7 +594,10 @@ const TokenomicsSection = () => {
                 <motion.div key={i + 3} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i + 3) * 0.1 }} className="group">
                   <div className="relative bg-black/60 backdrop-blur-xl border border-white/5 p-4 rounded-[20px] w-[220px] group-hover:border-purple-500/40 transition-all duration-300 group-hover:translate-y-[-5px]">
                     <div className="flex justify-between items-start mb-2"><span className={`text-[9px] font-bold uppercase tracking-widest ${item.color}`}>{item.label}</span><div className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-purple-500 animate-pulse" /></div>
-                    <div className="text-2xl font-light text-white tracking-tighter">{item.value}</div>
+                    <div className="flex items-baseline gap-2">
+                      <div className="text-2xl font-light text-white tracking-tighter">{item.value}</div>
+                      <div className="text-[10px] text-gray-500 font-medium">{item.tokens}</div>
+                    </div>
                     <div className="mt-3 pt-3 border-t border-white/5 flex justify-between items-center opacity-40 group-hover:opacity-100 transition-opacity"><span className="text-[7px] uppercase tracking-widest font-bold">Allocation 0{i + 4}</span><ArrowRight size={8} className="text-purple-400" /></div>
                   </div>
                 </motion.div>
@@ -747,7 +753,7 @@ const Footer = () => (
             ZE23 @ 2025 All Right Reserved
           </p>
           <p className="text-[10px] leading-relaxed text-gray-600 max-w-4xl font-light">
-            <span className="text-gray-500 font-medium">Disclaimer:</span> Tokens are the utility tokens of the ZE23 ecosystem, designed to power experiences and rewards within the platform. The information provided on this site does not constitute financial advice. This is not an investment offer, and the token does not represent shares or company ownership. Please read our Terms & Conditions before participating in the presale.
+            <span className="text-gray-500 font-medium">Disclaimer:</span> Tokens are the utility tokens of the ZE23 ecosystem, designed to power experiences and rewards within the platform. The information provided on this site does not constitute financial advice. This is not an investment offer, and the token does not represent shares or company ownership. Please read our Terms & Conditions before participating in the project.
           </p>
         </div>
       </div>

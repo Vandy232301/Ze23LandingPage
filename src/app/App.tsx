@@ -53,9 +53,19 @@ import instagramIcon from "figma:asset/06d9b33715ebaa822bad91791975dbb5eca07022.
 
 const LogoTicker = () => {
   const partners = [
-    "HACKERNOON", "ANALYTICS INSIGHT", "BINANCE", "COINMARKETCAP", "FINANCEFEEDS", 
-    "COINRISE", "COINMOONER", "COINSNIPER", "ALTCOINDAILY", "ZYCRYPTO",
-    "CHAINPLAY", "PLAYTOEARN", "TOPICOLIST"
+    { name: "HACKERNOON", link: "https://hackernoon.com/defi-had-its-hype-socialfi-is-the-new-vibe" },
+    { name: "ANALYTICS INSIGHT", link: "https://www.analyticsinsight.net/cryptocurrency-analytics-insight/this-solana-app-pays-you-to-watch-content-meet-ze23-the-web3-game-changer" },
+    { name: "BINANCE", link: "#" },
+    { name: "COINMARKETCAP", link: "https://coinmarketcap.com/community/articles/685a8feec620a445d2251739/" },
+    { name: "FINANCEFEEDS", link: "https://financefeeds.com/web3s-most-thrilling-social-app-is-here-ze23-redefines-what-tiktok-got-wrong/" },
+    { name: "COINRISE", link: "https://thecoinrise.com/what-is-ze23-understanding-the-web3-socialfi-platform-that-pays-you-for-engagement/" },
+    { name: "COINMOONER", link: "https://coinmooner.com/coins/ze23-z3" },
+    { name: "COINSNIPER", link: "https://coinsniper.net/coin/82991" },
+    { name: "ALTCOINDAILY", link: "https://altcoindaily.co/what-is-ze23-understanding-the-web3-socialfi-platform-that-pays-you-for-engagement/" },
+    { name: "ZYCRYPTO", link: "https://zycrypto.com/solanas-next-breakout-star-ze23-leads-3-crypto-presales-drawing-massive-whale-attention-in-2025/" },
+    { name: "CHAINPLAY", link: "https://chainplay.gg/blog/social-media-2-starts-now-5-must-watch-crypto-projects/" },
+    { name: "PLAYTOEARN", link: "https://playtoearn.com/news/could-ze23-be-the-first-web3-app-to-challenge-traditional-social-media-giants" },
+    { name: "TOPICOLIST", link: "https://topicolist.com/ze23" }
   ];
   
   return (
@@ -68,14 +78,17 @@ const LogoTicker = () => {
         animate={{ x: ["0%", "-50%"] }}
         transition={{ duration: 50, ease: "linear", repeat: Infinity }}
       >
-        {[...partners, ...partners].map((name, i) => (
-          <span 
+        {[...partners, ...partners].map((partner, i) => (
+          <a 
             key={i} 
-            className="text-[12px] font-bold opacity-30 hover:opacity-100 transition-all duration-300 tracking-[0.5em] text-white"
+            href={partner.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[12px] font-bold opacity-30 hover:opacity-100 transition-all duration-300 tracking-[0.5em] text-white hover:scale-110"
             style={{ fontFamily: "'Syncopate', sans-serif" }}
           >
-            {name}
-          </span>
+            {partner.name}
+          </a>
         ))}
       </motion.div>
     </div>

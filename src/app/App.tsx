@@ -11,7 +11,6 @@ import {
   ArrowRight,
   Plus,
   Minus,
-  Twitter,
   Instagram,
   Send,
   Github,
@@ -709,7 +708,9 @@ const Footer = () => (
       <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-6">
         <div className="flex items-center gap-10">
           <a href="#" className="text-white/40 hover:text-white transition-colors">
-            <Twitter size={20} strokeWidth={1.5} />
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153ZM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644Z" />
+            </svg>
           </a>
           <a 
             href="https://www.instagram.com/ze23_app?igsh=NnZtdTVvaHU4ZmF3" 
@@ -750,7 +751,7 @@ const Footer = () => (
       <div className="pt-8 border-t border-white/5 mt-12">
         <div className="flex flex-col gap-6">
           <p className="text-[9px] font-medium text-gray-700 uppercase tracking-[0.3em]">
-            ZE23 @ 2025 All Right Reserved
+            ZE23 @ 2026 All Right Reserved
           </p>
           <p className="text-[10px] leading-relaxed text-gray-600 max-w-4xl font-light">
             <span className="text-gray-500 font-medium">Disclaimer:</span> Tokens are the utility tokens of the ZE23 ecosystem, designed to power experiences and rewards within the platform. The information provided on this site does not constitute financial advice. This is not an investment offer, and the token does not represent shares or company ownership. Please read our Terms & Conditions before participating in the project.

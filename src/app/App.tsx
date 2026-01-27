@@ -42,7 +42,7 @@ import coinImage from "figma:asset/d7e6ba1bdacfee6617542cb7390ca2dd060a7d94.png"
 
 import zaiAppMockup from "figma:asset/8489580f091250fe939b8e46287c6940fda635cc.png";
 import marketMockup from "figma:asset/c86ed21c894df81179d303c3db317edc6377d776.png";
-import glowBlob from "figma:asset/63eefb0e7bd6885b114e7cc9e4a2add4cd51fdd7.png";
+import glowBlobAsset from "figma:asset/63eefb0e7bd6885b114e7cc9e4a2add4cd51fdd7.png";
 import ctaBg from "figma:asset/3dcedcae2c65107d56519b6e63da92e622406118.png";
 
 import impactCoins from "figma:asset/9010532f58c36f80cd31df95bd4441a26e0cda9e.png";

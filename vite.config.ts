@@ -8,13 +8,16 @@ export default defineConfig({
     tailwindcss(),
     {
       name: 'figma-asset-resolver',
+      enforce: 'pre',
       resolveId(id) {
         if (id.startsWith('figma:asset/')) {
-          return id;
+          // Returning with \0 prefix marks this as a virtual module
+          // This prevents Vite's internal asset plugin from trying to find it on disk
+          return '\0' + id;
         }
       },
       load(id) {
-        if (id.startsWith('figma:asset/')) {
+        if (id.startsWith('\0figma:asset/')) {
           const assetMap = {
             'ddf02415a17def7d561ee4228b7cb0b6932b3583': 'https://images.unsplash.com/photo-1760978631985-590e3b5f4057?q=80&w=1080',
             '90b2dde31070f1cfdb577bb7f01701b556b9d163': 'https://images.unsplash.com/photo-1766258959691-3aea033fda2c?q=80&w=1080',
@@ -27,8 +30,11 @@ export default defineConfig({
             'a309be07035dfb011348d1ed801b047546ee5971': 'https://images.unsplash.com/photo-1762278804729-13d330fad71a?q=80&w=1080',
             '0a354fe30b98fef25ceff8e41093f6de54a78e9b': 'https://cdn-icons-png.flaticon.com/512/2111/2111646.png',
             '06d9b33715ebaa822bad91791975dbb5eca07022': 'https://cdn-icons-png.flaticon.com/512/2111/2111463.png',
+            'c3fb7f8b9f1290fe0f3d95be4887cfd7b1fc46d9': 'https://images.unsplash.com/photo-1762278804729-13d330fad71a?q=80&w=1080',
           };
-          const hash = id.split('/')[1].split('.')[0];
+          // Extract hash from \0figma:asset/HASH.png
+          const rawId = id.slice(1);
+          const hash = rawId.split('/')[1].split('.')[0];
           const url = assetMap[hash] || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
           return `export default "${url}"`;
         }

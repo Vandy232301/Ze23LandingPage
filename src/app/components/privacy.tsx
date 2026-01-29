@@ -173,9 +173,6 @@ export const Privacy = () => {
                   <li>Withdraw consent (where processing is based on your consent).</li>
                   <li>Lodge a complaint with your local data protection authority.</li>
                 </ul>
-                <p className="mt-4">
-                  To exercise these rights, please contact <a href="mailto:legal@ze23.app" className="text-cyan-400 hover:underline">legal@ze23.app</a>.
-                </p>
               </div>
 
               <div className="space-y-4">

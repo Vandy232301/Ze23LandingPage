@@ -103,7 +103,7 @@ const LogoTicker = () => {
 
 const TokensLiveSection = () => {
   return (
-    <div className="w-full max-w-5xl mx-auto mt-16 mb-32 px-4">
+    <div className="w-full max-w-5xl mx-auto mt-16 mb-2 px-4">
       <motion.div 
         initial={{ opacity: 0, y: 30 }} 
         animate={{ opacity: 1, y: 0 }} 
@@ -158,6 +158,78 @@ const TokensLiveSection = () => {
         </div>
       </motion.div>
     </div>
+  );
+};
+
+const NextPhaseAnnouncement = () => {
+  return (
+    <section className="w-full pt-2 pb-24 px-4">
+      <div className="w-full max-w-5xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 1, delay: 0.2 }} 
+          className="relative rounded-[24px] overflow-hidden border border-white/5 bg-[#0a0a0a] backdrop-blur-xl"
+        >
+        {/* Background gradient effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/10 via-transparent to-purple-900/10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_70%)]" />
+        
+        <div className="relative z-10 pt-16 pb-16 px-8 md:px-16 flex flex-col items-center">
+          {/* Decorative lines */}
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
+            <div className="w-2 h-2 rounded-full bg-cyan-500/60 shadow-[0_0_12px_rgba(6,182,212,0.6)] animate-pulse" />
+            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
+          </div>
+
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 mb-6"
+          >
+            <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.8)] animate-pulse" />
+            <span className="text-[9px] font-bold text-cyan-300 uppercase tracking-[0.3em]">Coming Soon</span>
+          </motion.div>
+
+          {/* Main message */}
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.95 }} 
+            animate={{ opacity: 1, scale: 1 }} 
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tighter leading-tight text-center mb-6 text-white"
+          >
+            Next Phase will be launching
+            <br />
+            <span className="font-normal italic bg-gradient-to-r from-cyan-200 via-white to-purple-200 bg-clip-text text-transparent">
+              our ZE23 SocialFI App
+            </span>
+            <br />
+            <span className="text-2xl md:text-4xl lg:text-5xl font-medium text-cyan-400">
+              iOS Beta
+            </span>
+          </motion.h2>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-lg md:text-xl text-gray-400 font-light tracking-wide mb-8 text-center"
+          >
+            Stay Tuned!
+          </motion.p>
+
+          {/* Decorative elements */}
+          <div className="absolute top-4 left-4 w-24 h-24 bg-cyan-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-4 right-4 w-28 h-28 bg-purple-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl" />
+        </div>
+      </motion.div>
+      </div>
+    </section>
   );
 };
 
@@ -245,9 +317,11 @@ const Navbar = () => {
 const Hero = () => {
   const { t } = useTranslation();
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-48 px-6 overflow-hidden">
-      <GlowBlob color="rgba(168, 85, 247, 0.2)" className="-top-20 -left-20" />
-      <GlowBlob color="rgba(6, 182, 212, 0.15)" className="bottom-0 -right-20" delay={2} />
+    <section className="relative min-h-screen flex flex-col items-center justify-start pt-48 pb-32 px-6">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <GlowBlob color="rgba(168, 85, 247, 0.2)" className="-top-20 -left-20" />
+        <GlowBlob color="rgba(6, 182, 212, 0.15)" className="bottom-0 -right-20" delay={2} />
+      </div>
       <div className="relative z-10 max-w-5xl w-full flex flex-col items-center text-center">
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="inline-flex items-center gap-2 mb-6 text-[8px] font-bold tracking-[0.4em] text-purple-400 uppercase">{t("hero.subtitle")}</motion.div>
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="text-7xl md:text-[140px] font-light tracking-tighter mb-10 leading-[0.9]">{t("hero.title")} <br /><span className="font-normal italic bg-gradient-to-r from-white via-white to-gray-500 bg-clip-text text-transparent">{t("hero.titleItalic")}</span></motion.h1>
@@ -257,7 +331,7 @@ const Hero = () => {
             <a 
               href="https://t.me/ZE23_Official" 
               target="_blank" 
-              rel="noopener noreferrer" 
+              rel="noopener noreferrer"
               className="px-8 py-3.5 rounded-full bg-white text-black font-bold text-[10px] uppercase tracking-[0.2em] hover:scale-105 transition-all inline-block"
             >
               {t("hero.joinCommunity")}
@@ -265,7 +339,7 @@ const Hero = () => {
             <a 
               href="https://ze23.gitbook.io/ze23" 
               target="_blank" 
-              rel="noopener noreferrer" 
+              rel="noopener noreferrer"
               className="px-8 py-3.5 rounded-full bg-[#0a0a0a] border border-white/10 text-white font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-white/5 transition-all inline-block"
             >
               {t("hero.whitepaper")}
@@ -836,6 +910,7 @@ const Footer = () => {
 const LandingPage = () => (
   <main>
     <Hero />
+    <NextPhaseAnnouncement />
     <LogoTicker />
     <ProblemsSection />
     <AlgorithmSection />

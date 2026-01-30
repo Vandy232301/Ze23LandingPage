@@ -141,7 +141,9 @@ const TokensLiveSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            href="#" 
+            href="https://dexscreener.com/solana/j7lgdn4qsfazjne6fbqdphlzvrnq3hzbgjejol2m4mty" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative px-12 py-4 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold text-sm uppercase tracking-[0.2em] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] inline-flex items-center gap-3"
           >
             <span>View on DexScreener</span>

@@ -101,71 +101,58 @@ const LogoTicker = () => {
   );
 };
 
-const BeautifulCountdown = () => {
-  const { t } = useTranslation();
-  const calculateTimeLeft = () => {
-    const targetDate = new Date('2026-01-30T18:00:00Z').getTime();
-    const now = new Date().getTime();
-    const difference = targetDate - now;
-    if (difference <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const timeUnits = [
-    { label: t("countdown.days"), value: timeLeft.days },
-    { label: t("countdown.hours"), value: timeLeft.hours },
-    { label: t("countdown.min"), value: timeLeft.minutes },
-    { label: t("countdown.sec"), value: timeLeft.seconds }
-  ];
-
+const TokensLiveSection = () => {
   return (
     <div className="w-full max-w-5xl mx-auto mt-16 mb-32 px-4">
-      <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="relative rounded-[24px] overflow-hidden border border-white/5 bg-[#0a0a0a]">
-        <div className="relative z-10 pt-10 pb-8 flex flex-col items-center">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="h-[1px] w-8 bg-purple-900/30" />
-            <span className="text-[8px] font-bold text-gray-500 uppercase tracking-[0.4em]">{t("countdown.initialTokenEvent")}</span>
-            <div className="h-[1px] w-8 bg-purple-900/30" />
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 1 }} 
+        className="relative rounded-[24px] overflow-hidden border border-white/5 bg-[#0a0a0a] backdrop-blur-xl"
+      >
+        {/* Background gradient effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.1),transparent_70%)]" />
+        
+        <div className="relative z-10 pt-16 pb-16 px-8 md:px-16 flex flex-col items-center">
+          {/* Decorative lines */}
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
+            <div className="w-2 h-2 rounded-full bg-purple-500/60 shadow-[0_0_12px_rgba(168,85,247,0.6)] animate-pulse" />
+            <div className="h-[1px] w-12 bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 w-full h-[180px] border-y border-white/5">
-            {timeUnits.map((unit, i) => (
-              <div key={unit.label} className={`relative flex flex-col items-center justify-center p-4 ${i < 3 ? 'md:border-r border-white/5' : ''} ${i % 2 === 0 ? 'border-r md:border-r' : ''}`}>
-                <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-                  <img src={launchTexture} alt="" className="w-full h-full object-cover mix-blend-screen opacity-40 grayscale" />
-                </div>
-                <div className="relative z-10 flex flex-col items-center">
-                  <span className="text-5xl md:text-7xl font-extralight tracking-tighter leading-none text-white mb-3 tabular-nums">{String(unit.value).padStart(2, '0')}</span>
-                  <span className="text-[7px] font-bold text-gray-600 uppercase tracking-[0.4em]">{unit.label}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 flex flex-col items-center gap-6">
-            <div className="flex items-center gap-2">
-              <div className="w-1 h-1 rounded-full bg-purple-600 shadow-[0_0_6px_rgba(147,51,234,0.6)]" />
-              <span className="text-[8px] font-bold text-gray-500 uppercase tracking-widest">{t("countdown.launching")}</span>
-            </div>
-            <a 
-              href="https://t.me/ZE23_Official" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="px-10 py-3 rounded-full border border-white/10 bg-white text-black hover:bg-white/90 text-[10px] font-bold uppercase tracking-[0.2em] transition-all inline-block"
-            >
-              {t("hero.joinCommunity")}
-            </a>
-          </div>
+
+          {/* Main message */}
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.95 }} 
+            animate={{ opacity: 1, scale: 1 }} 
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tighter leading-tight text-center mb-12 text-white"
+          >
+            The Tokens are now
+            <br />
+            <span className="font-normal italic bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent">
+              Live on the Markets
+            </span>
+          </motion.h2>
+
+          {/* Button */}
+          <motion.a
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            href="#" 
+            className="group relative px-12 py-4 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold text-sm uppercase tracking-[0.2em] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] inline-flex items-center gap-3"
+          >
+            <span>View on DexScreener</span>
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            {/* Shine effect */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+          </motion.a>
+
+          {/* Decorative elements */}
+          <div className="absolute top-4 right-4 w-20 h-20 bg-purple-500/10 rounded-full blur-2xl" />
+          <div className="absolute bottom-4 left-4 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl" />
         </div>
       </motion.div>
     </div>
@@ -289,7 +276,7 @@ const Hero = () => {
             <span className="ml-3 text-[8px] font-bold text-gray-500 uppercase tracking-widest">{t("hero.earlyAdopters")}</span>
           </div>
         </motion.div>
-        <BeautifulCountdown />
+        <TokensLiveSection />
       </div>
     </section>
   );

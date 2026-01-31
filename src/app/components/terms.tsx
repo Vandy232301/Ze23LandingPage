@@ -150,6 +150,26 @@ export const Terms = () => {
               </div>
 
               <div className="space-y-4">
+                <h2 className="text-white text-lg font-medium tracking-tight">10. Company's Right to Modify Project Parameters</h2>
+                <p>
+                  The Company reserves the absolute and unilateral right, at its sole discretion, to modify, amend, or revise any aspect of the ZE23 project, including but not limited to:
+                </p>
+                <ul className="space-y-2 list-disc pl-5 text-gray-400">
+                  <li><span className="text-white font-medium">Listing Strategy:</span> The timing, selection, and terms of token listings on any cryptocurrency exchanges, decentralized exchanges (DEXs), or trading platforms, including the decision to list, delist, or modify listing parameters at any time.</li>
+                  <li><span className="text-white font-medium">Tokenomics:</span> The economic model, token distribution mechanisms, supply parameters, staking rewards, fee structures, burn mechanisms, and any other token-related economic features or policies.</li>
+                  <li><span className="text-white font-medium">Project Details:</span> The project roadmap, feature set, technical specifications, platform functionality, development milestones, partnership agreements, and any other project-related information or commitments.</li>
+                  <li><span className="text-white font-medium">Vesting and Unlocking Schedules:</span> As previously stated in Section 4, the Company retains discretion to modify vesting schedules.</li>
+                  <li><span className="text-white font-medium">Phase-Specific Valuation Models:</span> As previously stated in Section 3, the Company retains discretion to amend valuation models.</li>
+                </ul>
+                <p className="mt-4">
+                  All such modifications shall be implemented in good faith and in the best interests of the long-term sustainability and success of the ZE23 ecosystem. The Company will endeavor to provide reasonable notice of material changes where practicable, but Participants acknowledge that certain modifications may be implemented immediately without prior notice due to regulatory, technical, or market exigencies.
+                </p>
+                <p className="mt-4">
+                  <span className="text-white font-medium">Early Private Sale and Presale Participants:</span> By participating in the early private sale or presale phases and receiving ZE23 Tokens, all Participants expressly acknowledge, agree, and consent to all changes, modifications, and amendments that the Company may deem necessary or advisable for the continued development, operation, and success of the ZE23 project. This consent extends to all past, present, and future modifications, regardless of whether such changes were disclosed or contemplated at the time of token acquisition. Participants understand that the dynamic nature of blockchain projects and regulatory environments may necessitate ongoing adjustments, and they accept such flexibility as an inherent aspect of their participation in the Project.
+                </p>
+              </div>
+
+              <div className="space-y-4">
                 <h2 className="text-white text-lg font-medium tracking-tight">11. Non-Participation in Collective Actions</h2>
                 <p>
                   Participants expressly acknowledge and agree that they will not participate in, support, or initiate any collective legal proceeding, including class-action lawsuits or group arbitration, against the Company, its directors, officers, or affiliates. All disputes shall be resolved exclusively on an individual basis through confidential and binding arbitration conducted in the British Virgin Islands. Both parties commit to first pursuing a mutually constructive dialogue to resolve disputes amicably prior to engaging in any formal arbitration processes.
